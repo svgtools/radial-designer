@@ -1,13 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixi App</title>
+  <!-- <link rel="stylesheet" href="./src/style.css"> -->
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      font-family: sans-serif;
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+    }
+
+    .sidebar h1 {
+      text-align: center;
+    }
+
+    .sidebar textarea,
+    .sidebar button {
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+    }
+
+    #pixi-canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <h1>appName</h1>
+    <textarea id="input-text" rows="4" placeholder="Enter text"></textarea>
+    <button id="input-button">Process Input</button>
+    <textarea id="output-text" rows="4" placeholder="Output"></textarea>
+    <button id="output-button">Clear Output</button>
+  </div>
+
+  <div class="main-content">
+    <!-- PixiJS Canvas will be inserted here -->
+  </div>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
 </html>
